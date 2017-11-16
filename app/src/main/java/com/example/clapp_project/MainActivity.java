@@ -20,9 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.name);
 
+        //create a session
         DaoSession daoSession = ((AppController) getApplication()).getDaoSession();
+
+        //get the session for relevant Object
         UserDao userDao = daoSession.getUserDao();
 
+        //load the object
         User u1 = userDao.load(1L);
 
         if (u1 != null) {
